@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 function Users() {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loading);
 
   const [newUser, setNewUser] = useState({
     firstName: "",

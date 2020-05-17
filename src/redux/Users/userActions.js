@@ -70,7 +70,7 @@ export const addUserFailed = (message) => ({
 });
 
 export const addUser = (user) => (dispatch) => {
-  console.log("this is user", user);
+  //console.log("this is user", user);
   dispatch(addUserRequest());
   const requestBody = {
     usertype: 3,
