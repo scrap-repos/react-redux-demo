@@ -59,6 +59,24 @@ const userReducer = (state = initialState, action) => {
         message: action.payload,
       };
 
+    case EDIT_USER_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case EDIT_USER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: action.payload,
+      };
+    case EDIT_USER_FAILED:
+      return {
+        ...state,
+        loading: false,
+        message: action.payload,
+      };
+
     case DELETE_USER_REQUEST:
       return {
         ...state,
