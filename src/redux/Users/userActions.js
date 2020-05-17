@@ -49,9 +49,9 @@ export const fetchUsers = () => (dispatch) => {
       dispatch(fetchUsersSuccess(result.data.users));
       // console.log("users data ==>", result);
     })
-    .catch((err) => {
-      //fetchUsersFailed(error);
-      console.log(err);
+    .catch((error) => {
+      dispatch(fetchUsersFailed(error));
+      console.log(error);
     });
 };
 
@@ -96,9 +96,9 @@ export const addUser = (user) => (dispatch) => {
       dispatch(fetchUsers());
       //console.log(result.data);
     })
-    .catch((err) => {
-      //fetchUsersFailed(error);
-      console.log(err);
+    .catch((error) => {
+      dispatch(addUserFailed(error));
+      console.log(error);
     });
 };
 
@@ -140,9 +140,9 @@ export const editUser = (user) => (dispatch) => {
       dispatch(fetchUsers());
       //console.log(result.data);
     })
-    .catch((err) => {
-      //fetchUsersFailed(error);
-      console.log(err);
+    .catch((error) => {
+      dispatch(editUserFailed(error));
+      console.log(error);
     });
 };
 
@@ -181,8 +181,8 @@ export const deleteUser = (user) => (dispatch) => {
       dispatch(fetchUsers());
       // console.log(result.data);
     })
-    .catch((err) => {
-      //fetchUsersFailed(error);
-      console.log(err);
+    .catch((error) => {
+      dispatch(deleteUserFailed(error));
+      console.log(error);
     });
 };
